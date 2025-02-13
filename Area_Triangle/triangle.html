@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangle Area Calculator</title>
+  <style>
+    /* Global styles reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body with a soft gradient background */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #88d3d2, #f1f1f1); /* Soft teal to light gray */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Main container style */
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Input and label styling */
+    label {
+      font-size: 16px;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      font-size: 18px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    /* Result and error messages */
+    .result {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      background-color: #4CAF50;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Animations for the result */
+    @keyframes slideIn {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .result {
+      animation: slideIn 0.5s ease-out;
+    }
+
+    /* For responsiveness */
+    @media (max-width: 500px) {
+      .container {
+        width: 90%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Triangle Area Calculator</h1>
+
+    <!-- Base input -->
+    <label for="base">Base:</label>
+    <input type="number" id="base" placeholder="Enter the base" required>
+
+    <!-- Height input -->
+    <label for="height">Height:</label>
+    <input type="number" id="height" placeholder="Enter the height" required>
+
+    <!-- Calculate button -->
+    <button onclick="calculateArea()">Calculate Area</button>
+
+    <!-- Result display -->
+    <div class="result" id="result"></div>
+
+    <!-- Error message -->
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    function calculateArea() {
+      const base = parseFloat(document.getElementById('base').value);
+      const height = parseFloat(document.getElementById('height').value);
+
+      // Reset error and result areas
+      document.getElementById('error').textContent = "";
+      document.getElementById('result').style.display = "none";
+
+      // Validation check for base and height
+      if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+        document.getElementById('error').textContent = "Please enter valid positive numbers for base and height.";
+        return;
+      }
+
+      // Calculate the area of the triangle
+      const area = (base * height) / 2;
+
+      // Display the result with animation
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = `Area of the triangle: ${area.toFixed(2)} square units`;
+      resultDiv.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
