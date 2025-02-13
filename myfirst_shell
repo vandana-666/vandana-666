@@ -1,0 +1,121 @@
+#!/bin/bash
+#display user home 
+echo "THE CURRENT DIRECTORY IS:" 
+pwd
+echo "THE USER LOGGED IN IS :"
+whoami
+########
+
+#display user home
+#echo "home for the current user is : $HOME"
+# echo "I have \$1 in my pocket"
+
+##########
+# user variable 
+#grade=10th
+#person="vandana"
+#echo "$person is a good girl , she is in grade $grade"
+
+#########
+#mydir=$(pwd)
+#echo $mydir 
+
+##########
+
+#var1=$(( 5 + 5 ))
+#echo $var1
+
+#var2=$(( $var1 * 2 ))
+#echo $var2
+
+#######
+
+#if whoami; then 
+        
+#echo  "it works"
+
+#fi 
+
+#######
+#user=likegeeks
+#if grep $user /etc/passwd; then
+
+#echo "No such a user $user"
+#fi
+
+##########
+#user=anotherUser
+#if grep $user /etc/passwd; then
+#	echo "The user $user Exists"
+#else
+
+#	echo "The user $user doesn’t exist"
+#fi
+
+#############
+
+#user=anotherUser
+#if grep $user /etc/passwd; then
+#	echo "The user $user Exists"
+#else  
+#	echo "The user $user doesn’t exist"
+#fi
+##################
+
+#dir=/home/vandana
+#name="vandana"
+#if [ -d $dir ] && [ -n $name ]; then
+      
+#echo "The name exists and the folder $dir exists."
+
+#else 
+
+# echo "one test failed"
+
+#fi 
+
+#################
+#dir=/home/vandana
+
+#name="vandanaNautiyal"
+
+#if [ -d $dir ] || [ -n $name ]; then
+#          echo "Success"
+
+#else 
+
+#      echo "Both taste failed"
+#fi
+
+####################
+#!/bin/bash
+#num=1
+#if [ $num -gt 10 ]; then 
+#        echo "$num is bigger than 10"
+#else
+#        echo "$num is less than 10"
+#fi
+#################
+#!/bin/bash
+#user="vandana"
+#if [ $user = $USER ]; then
+#	echo "The user $user$nbsp; is the current logged in user"
+#fi
+##############
+
+#!/bin/bash
+#v1=text
+#v2="another text"
+#if [ $v1 \> "$v2" ]; then
+#	echo "$v1 is greater than $v2"
+#else
+#	echo "$v1 is less than $v2"
+#fi
+############
+#mydir=/home/vandana
+#if [ -d $mydir ]; then echo "Directory $mydir exists"
+#cd $mydir 
+#ls
+#else
+#echo "no such file or directory $mydir"
+#fi 
